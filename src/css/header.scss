@@ -47,8 +47,8 @@ header {
           border-bottom: 1px solid $secondary-color;
         }
       }
-      .onPage {
-        color: red;
+      .active {
+        display: none;
       }
     }
   }

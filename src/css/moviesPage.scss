@@ -127,6 +127,18 @@ $black: #212121;
     }
   }
 }
+.SectionTitle {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  font-size: 2rem;
+  color: $white;
+  font-family: $font;
+  font-weight: 700;
+  text-decoration: underline;
+  @media only screen and (max-width: 570px) {
+    display: none;
+  }
+}
 .wrapperCarrousel {
   width: 90%;
   margin: 2rem auto;
