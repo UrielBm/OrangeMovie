@@ -1,7 +1,26 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const response = await graphql(`
+    query {
+      allDatoCmsMovie {
+        nodes {
+          originalId
+        }
+      }
+    }
+  `)
+  if (response.erros) {
+    reporter.panic("No hubo resultados")
+  }
 
-// You can delete this file if you're not using it
+  //si hay resultados
+  const movies = response.data.allDatoCmsMovie.nodes
+  movies.forEach(movie => {
+    actions.createPage({
+      path: `movies/movie=${movie.originalId}`,
+      component: require.resolve("./src/components/Movie.jsx"),
+      context: {
+        originalId: movie.originalId,
+      },
+    })
+  })
+}
