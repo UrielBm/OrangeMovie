@@ -25,7 +25,7 @@ const Header = () => (
         />
       </section>
       <nav className="nav">
-        <Link to="/movies" className="Link">
+        <Link to="/movies" className="Link" activeClassName="active">
           películas
         </Link>
       </nav>
