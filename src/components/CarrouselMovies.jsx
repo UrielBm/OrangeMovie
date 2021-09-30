@@ -26,18 +26,21 @@ const CarrouselMovies = () => {
   const { Movies } = useGetMovies()
   const { movies } = Movies
   return (
-    <section className="wrapperCarrousel">
-      <Carousel
-        responsive={responsive}
-        infinite={true}
-        removeArrowOnDeviceType={["tablet"]}
-        className="Carousel"
-      >
-        {movies.map(movie => (
-          <CardMovie key={movie.id} movie={movie} />
-        ))}
-      </Carousel>
-    </section>
+    <>
+      <h3 className="SectionTitle">Películas</h3>
+      <section className="wrapperCarrousel">
+        <Carousel
+          responsive={responsive}
+          infinite={true}
+          removeArrowOnDeviceType={["tablet"]}
+          className="Carousel"
+        >
+          {movies.map(movie => (
+            <CardMovie key={movie.id} movie={movie} />
+          ))}
+        </Carousel>
+      </section>
+    </>
   )
 }
 
