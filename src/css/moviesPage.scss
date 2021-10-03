@@ -205,6 +205,8 @@ $black: #212121;
     }
   }
   @media only screen and (max-width: 570px) {
+    width: 300px;
+    margin: 0 auto;
     .Carousel {
       .actionCard {
         .Card {
