@@ -6,6 +6,7 @@ import BannerItem from "./BannerItem"
 import "./../css/movieItem.scss"
 import Video from "./Video"
 import Load from "./Load"
+import ErrorMessage from "./ErrorMessage"
 export const query = graphql`
   query ($originalId: String) {
     allDatoCmsMovie(filter: { originalId: { eq: $originalId } }) {
@@ -30,8 +31,12 @@ const Movie = ({ data }) => {
   const movie = data.allDatoCmsMovie.nodes[0]
   const { title, category, description, movieTime, poster, source } = movie
   const [loading, setloading] = useState(true)
+  const [error, setError] = useState(false)
   const handleLoading = () => {
     setloading(false)
+  }
+  const handleError = () => {
+    setError(true)
   }
   return (
     <Layout>
@@ -46,20 +51,22 @@ const Movie = ({ data }) => {
         />
       </section>
       <section className="wrapperVideo">
-        {/* <video className="video" controls preload="auto" src={source}>
-          <track
-            src="captions_es.vtt"
-            kind="captions"
-            srcLang="es"
-            label="spanish_captions"
-          />
-        </video> */}
-        <div className={loading ? "noReady" : "ready"}>
-          <Load />
-        </div>
-        <div className={loading ? "loading" : "noLoading"}>
-          <Video data={source} loading={handleLoading} />
-        </div>
+        {!error ? (
+          <>
+            <div className={loading ? "noReady" : "ready"}>
+              <Load />
+            </div>
+            <div className={loading ? "loading" : "noLoading"}>
+              <Video
+                data={source}
+                loading={handleLoading}
+                error={handleError}
+              />
+            </div>
+          </>
+        ) : (
+          <ErrorMessage />
+        )}
       </section>
     </Layout>
   )
