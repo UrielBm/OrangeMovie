@@ -1,7 +1,14 @@
 import React from "react"
 import { getImage } from "gatsby-plugin-image"
 import { BgImage } from "gbimage-bridge"
-const BannerItem = ({ title, description, category, movieTime, poster }) => {
+const BannerItem = ({
+  title,
+  description,
+  category,
+  movieTime,
+  poster,
+  autor,
+}) => {
   const image = getImage(poster)
   return (
     <section className="Banner">
@@ -13,9 +20,16 @@ const BannerItem = ({ title, description, category, movieTime, poster }) => {
         <p className="sinopsis">
           Sinopsis: <span className="description">{description}</span>
         </p>
-        <p>
-          Categoria:<span className="category">{category}</span>
-        </p>
+        {autor && (
+          <p>
+            Autor: <span className="category">{autor}</span>
+          </p>
+        )}
+        {category && (
+          <p>
+            Categoria:<span className="category">{category}</span>
+          </p>
+        )}
         <p className="duration">
           Duración:<span className="time">{movieTime} mins.</span>
         </p>

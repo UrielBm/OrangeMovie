@@ -1,5 +1,6 @@
 import React from "react"
 import BannerMovies from "../components/BannerMovies"
+import CarrouselDocumentales from "../components/CarrouselDocumentales"
 import CarrouselMovies from "../components/CarrouselMovies"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -10,6 +11,7 @@ const movies = () => {
       <Seo title="movies" />
       <BannerMovies />
       <CarrouselMovies />
+      <CarrouselDocumentales />
     </Layout>
   )
 }
