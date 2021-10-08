@@ -136,7 +136,8 @@ $black: #212121;
   font-weight: 700;
   text-decoration: underline;
   @media only screen and (max-width: 570px) {
-    display: none;
+    font-size: 1rem;
+    margin-bottom: 1rem;
   }
 }
 .wrapperCarrousel {
