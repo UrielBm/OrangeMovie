@@ -24,7 +24,7 @@ const CarrouselDocumentales = () => {
     },
   }
   const { Documentales } = useGetDocumental()
-
+  if (Documentales.length === 0) return null
   return (
     <>
       <h3 className="SectionTitle">Documentales</h3>
