@@ -149,8 +149,8 @@ $black: #212121;
       text-decoration: none;
       .Card {
         font-family: $font;
-        width: 250px;
-        height: 340px;
+        width: 250px !important;
+        height: 340px !important;
         clip-path: polygon(
           10% 0,
           90% 0,

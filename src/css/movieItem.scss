@@ -101,6 +101,34 @@ $black: #212121;
     }
   }
 }
+.wrapperEpisodes {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 60rem;
+  margin: 0 auto;
+  gap: 1rem;
+  .wrapperDataEpisodio {
+    font-family: $font;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    p {
+      color: $principal-color;
+      font-weight: 700;
+      span {
+        color: $white;
+      }
+    }
+  }
+  @media only screen and (max-width: 570px) {
+    grid-template-columns: 1fr;
+    width: 100%;
+    padding: 1rem;
+    p {
+      margin: 0.5rem 0;
+    }
+  }
+}
 .wrapperVideo {
   width: 100%;
   display: flex;
