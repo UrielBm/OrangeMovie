@@ -8,6 +8,7 @@ const BannerItem = ({
   movieTime,
   poster,
   autor,
+  seasons,
 }) => {
   const image = getImage(poster)
   return (
@@ -30,9 +31,16 @@ const BannerItem = ({
             Categoria:<span className="category">{category}</span>
           </p>
         )}
-        <p className="duration">
-          Duración:<span className="time">{movieTime} mins.</span>
-        </p>
+        {seasons && (
+          <p>
+            Temporadas: <span className="time">{seasons} temporadas</span>
+          </p>
+        )}
+        {movieTime && (
+          <p className="duration">
+            Duración:<span className="time">{movieTime} mins.</span>
+          </p>
+        )}
       </section>
     </section>
   )
