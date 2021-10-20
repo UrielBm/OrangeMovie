@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from "gatsby"
 const useGetMovies = () => {
   const { data } = useStaticQuery(graphql`
     query {
-      data: allDatoCmsMovie {
+      data: allDatoCmsMovie(sort: { order: ASC, fields: title }) {
         nodes {
           originalId
           id
