@@ -9,6 +9,9 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
+    `@sidarthar/gatsby-plugin-image-2`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`, // Needed for dynamic image
     {
       resolve: `gatsby-source-filesystem`,
       options: {
