@@ -27,12 +27,7 @@ const Anuncio = () => {
       <h2 className="title">Anuncio: {title}</h2>
       <p className="description">{description}</p>
       <div className="wrapperImg">
-        <GatsbyImage
-          image={image}
-          alt="img anuncio"
-          className="Img"
-          imgStyle="img_anuncio"
-        />
+        <GatsbyImage image={image} alt="img_anuncio" className="Img" />
       </div>
     </section>
   )

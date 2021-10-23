@@ -26,12 +26,13 @@ $black: #212121;
   .wrapperImg {
     display: flex;
     justify-content: center;
-    .Img {
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      opacity: 0.6;
-    }
+    align-items: center;
+  }
+  .Img {
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%;
+    opacity: 0.6;
   }
   @media only screen and (max-width: 570px) {
     max-width: 100%;
