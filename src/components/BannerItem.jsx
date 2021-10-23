@@ -28,7 +28,14 @@ const BannerItem = ({
         )}
         {category && (
           <p>
-            Categoria:<span className="category">{category}</span>
+            Categoria:
+            <span
+              className={
+                category === "estreno" ? "category-estreno" : "category"
+              }
+            >
+              {category}
+            </span>
           </p>
         )}
         {seasons && (

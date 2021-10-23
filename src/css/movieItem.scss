@@ -62,6 +62,13 @@ $black: #212121;
             text-transform: uppercase;
           }
         }
+        .category-estreno {
+          @extend .category;
+          color: $secondary-color;
+          font-size: 1.5rem;
+          text-decoration: underline;
+          text-transform: uppercase;
+        }
         .time {
           margin-left: 0.5rem;
           color: $principal-color;
