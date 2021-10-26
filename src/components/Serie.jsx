@@ -12,7 +12,7 @@ export const query = graphql`
     allDatoCmsSerie(filter: { originalId: { eq: $originalId } }) {
       nodes {
         title
-        seasons
+        episodes
         description
         id
         originalId
@@ -35,8 +35,7 @@ export const query = graphql`
 `
 const Serie = ({ data }) => {
   const serie = data.allDatoCmsSerie.nodes[0]
-  const { title, seasons, description, poster, episodios } = serie
-  console.log(episodios)
+  const { title, episodes, description, poster, episodios } = serie
   const [loading, setloading] = useState(true)
   const [error, setError] = useState(false)
   const handleLoading = () => {
@@ -51,7 +50,7 @@ const Serie = ({ data }) => {
       <section className="wrapperBanner">
         <BannerItem
           title={title}
-          seasons={seasons}
+          episodes={episodes}
           description={description}
           poster={poster}
         />

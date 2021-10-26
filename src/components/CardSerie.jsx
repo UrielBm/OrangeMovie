@@ -4,7 +4,7 @@ import { BgImage } from "gbimage-bridge"
 import { Link } from "gatsby"
 
 const CardSerie = ({ serie }) => {
-  const { title, seasons, poster, originalId } = serie
+  const { title, episodes, poster, originalId } = serie
   const image = getImage(poster)
   return (
     <Link to={`serie=${originalId}`} className="actionCard">
@@ -15,7 +15,7 @@ const CardSerie = ({ serie }) => {
               Título: <span className="data">{title}</span>
             </p>
             <p>
-              Temporadas: <span className="data">{seasons} temps.</span>
+              Episodios: <span className="data">{episodes} episod.</span>
             </p>
           </div>
         </div>

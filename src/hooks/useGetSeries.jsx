@@ -5,7 +5,7 @@ const useGetSeries = () => {
       data: allDatoCmsSerie {
         nodes {
           title
-          seasons
+          episodes
           description
           id
           originalId
