@@ -24,18 +24,22 @@ export const query = graphql`
           )
         }
         episodios {
-          title
           description
+          title
           timeEpisode
           source
+          originalId
         }
       }
     }
   }
 `
-const Serie = ({ data }) => {
-  const serie = data.allDatoCmsSerie.nodes[0]
-  const { title, episodes, description, poster, episodios } = serie
+const Serie = ({ data, location }) => {
+  const id = location.pathname.split("=")
+  const serie = data.allDatoCmsSerie.nodes.filter(
+    serie => serie.originalId === id[1]
+  )
+  const { title, episodes, description, poster, episodios } = serie[0]
   const [loading, setloading] = useState(true)
   const [error, setError] = useState(false)
   const handleLoading = () => {
@@ -55,9 +59,9 @@ const Serie = ({ data }) => {
           poster={poster}
         />
       </section>
-      <section className="wrapperEpisodes">
+      <div>
         {episodios.map(episodio => (
-          <>
+          <div className="wrapperEpisodes" key={episodio.originalId}>
             <section className="wrapperVideo">
               {!error ? (
                 <>
@@ -87,9 +91,9 @@ const Serie = ({ data }) => {
                 Duración: <span>{episodio.timeEpisode} mins.</span>
               </p>
             </section>
-          </>
+          </div>
         ))}
-      </section>
+      </div>
     </Layout>
   )
 }
