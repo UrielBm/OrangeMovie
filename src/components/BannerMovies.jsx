@@ -14,13 +14,13 @@ const BannerMovies = () => {
       <section className="wrapperData">
         <h2>
           Título: <span className="movieTitle">{title}</span>
-          <StaticImage
+          {/* <StaticImage
             src="../images/tomb.svg"
             alt="aboutMouth"
             placeholder="blurred"
             className="tematic"
             loading="lazy"
-          />
+          /> */}
         </h2>
         <p className="sinopsis">
           Sinopsis: <span className="description">{description}</span>
