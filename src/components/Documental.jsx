@@ -15,6 +15,7 @@ export const query = graphql`
         titulo
         autor
         source
+        originalId
         poster {
           gatsbyImageData(
             placeholder: BLURRED
@@ -26,13 +27,13 @@ export const query = graphql`
     }
   }
 `
-const Documental = ({ data,location }) => {
-  // const id = location.pathname.split("=")
-  // const documental = data.allDatoCmsDocumental.nodes.filter(
-  //   documental => documental.originalId === id[1]
-  // )
-  const documental = data.allDatoCmsDocumental.nodes[0]
-  const { titulo, autor, description, time, poster, source } = documental
+const Documental = ({ data, location }) => {
+  const id = location.pathname.split("=")
+  console.log(id[1])
+  const documental = data.allDatoCmsDocumental.nodes.filter(
+    documental => documental.originalId === id[1]
+  )
+  const { titulo, autor, description, time, poster, source } = documental[0]
   const [loading, setloading] = useState(true)
   const handleLoading = () => {
     setloading(false)
