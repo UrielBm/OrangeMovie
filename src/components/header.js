@@ -17,7 +17,7 @@ const Header = () => (
       </Link>
       <section>
         <StaticImage
-          src="../images/sakura.png"
+          src="../images/christmas_tree.svg"
           alt="aboutMouth"
           placeholder="blurred"
           className="tematic"

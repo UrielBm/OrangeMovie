@@ -10,7 +10,7 @@ const ErrorMessage = () => {
         comunicarlo a Orange movie platform.
       </p>
       <StaticImage
-        src="../images/ghost.png"
+        src="../images/bauble_christmas.svg"
         alt="aboutMouth-Error"
         placeholder="blurred"
         className="errorPicture"
