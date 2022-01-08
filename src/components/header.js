@@ -15,7 +15,7 @@ const Header = () => (
         />
         <p className="textLogo">Orange Movie</p>
       </Link>
-      <section>
+      {/* <section>
         <StaticImage
           src="../images/christmas_tree.svg"
           alt="aboutMouth"
@@ -23,7 +23,7 @@ const Header = () => (
           className="tematic"
           loading="lazy"
         />
-      </section>
+      </section> */}
       <nav className="nav">
         <Link to="/movies" className="Link" activeClassName="active">
           películas
